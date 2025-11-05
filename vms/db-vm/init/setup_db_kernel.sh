@@ -72,3 +72,9 @@ echo ""
 echo "=========================================="
 echo "✅ Database VM kernel optimized!"
 echo "=========================================="
+echo ""
+read -p "Reboot now? (y/n) " -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    sudo reboot
+fi
