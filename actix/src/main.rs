@@ -32,6 +32,8 @@ async fn main() -> std::io::Result<()> {
             .route("/read_heavy_db", web::get().to(handlers::handle_read_heavy_from_db))
             .route("/write_heavy_db", web::post().to(handlers::handle_write_heavy_to_db))
     })
+    .backlog(8192)              // Increase pending connection queue
+    .max_connection_rate(15000)  // Allow high connection rate
     .bind("0.0.0.0:3000")?
     .run()
     .await

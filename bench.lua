@@ -1,0 +1,3 @@
+wrk.method = "POST"
+wrk.headers["Content-Type"] = "application/json"
+wrk.body = [[{"payload":{"user":{"id":123456,"name":"stress-test","prefs":{"lang":"en","tz":"UTC","flags":[true,false,true,true,false]}},"items":[{"sku":"A1","qty":10,"price":9.99},{"sku":"B2","qty":5,"price":19.99},{"sku":"C3","qty":2,"price":149.5}]},"metadata":{"trace":"abc-123","ts":1734067200,"headers":{"ua":"oha-bench","accept":["application/json","*/*"]}},"nested_array":[{"level":1,"data":{"foo":[1,2,3,4,5],"bar":{"k1":"v1","k2":"v2"}}},{"level":2,"data":{"numbers":[10,20,30,40,50,60],"obj":[{"x":1},{"x":2},{"x":3}]}}],"tags":["bench","heavy","json","parse","load"]}]]

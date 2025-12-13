@@ -144,6 +144,11 @@ pub async fn handle_write_heavy_to_db(
 ) -> impl Responder {
     let data = payload.into_inner();
 
+    // Convert typed structs to serde_json::Value for JSONB storage
+    let payload_json = serde_json::to_value(&data.payload).unwrap();
+    let metadata_json = serde_json::to_value(&data.metadata).unwrap();
+    let nested_array_json = serde_json::to_value(&data.nested_array).unwrap();
+
     let client = match pool.get().await {
         Ok(c) => c,
         Err(e) => return HttpResponse::InternalServerError().body(e.to_string()),
@@ -152,7 +157,7 @@ pub async fn handle_write_heavy_to_db(
     let row = match client
         .query_one(
             "INSERT INTO heavy_data (payload, metadata, nested_array, tags) VALUES ($1, $2, $3, $4) RETURNING id, created_at, updated_at",
-            &[&data.payload, &data.metadata, &data.nested_array, &data.tags],
+            &[&payload_json, &metadata_json, &nested_array_json, &data.tags],
         )
         .await
     {
@@ -162,9 +167,9 @@ pub async fn handle_write_heavy_to_db(
 
     let record = HeavyRecord {
         id: row.get::<_, i64>("id"),
-        payload: data.payload,
-        metadata: data.metadata,
-        nested_array: data.nested_array,
+        payload: payload_json,
+        metadata: metadata_json,
+        nested_array: nested_array_json,
         tags: data.tags,
         created_at: row.get::<_, DateTime<Utc>>("created_at"),
         updated_at: row.get::<_, DateTime<Utc>>("updated_at"),
