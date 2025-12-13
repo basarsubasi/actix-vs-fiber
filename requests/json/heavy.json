@@ -1,0 +1,97 @@
+{
+  "payload": {
+    "user": {
+      "id": 123456,
+      "name": "stress-test",
+      "prefs": {
+        "lang": "en",
+        "tz": "UTC",
+        "flags": [true, false, true, true, false],
+        "features": {
+          "beta": ["f1", "f2", "f3", "f4", "f5"],
+          "limits": {
+            "req_per_min": 10000,
+            "burst": 2000
+          }
+        }
+      }
+    },
+    "items": [
+      {"sku": "A1", "qty": 10, "price": 9.99, "attrs": {"color": "red", "size": "M"}},
+      {"sku": "B2", "qty": 5, "price": 19.99, "attrs": {"color": "blue", "size": "L"}},
+      {"sku": "C3", "qty": 2, "price": 149.5, "attrs": {"color": "black", "size": "XL"}},
+      {"sku": "D4", "qty": 25, "price": 4.5, "attrs": {"bundle": true, "codes": ["d4a", "d4b", "d4c"]}},
+      {"sku": "E5", "qty": 3, "price": 349.99, "attrs": {"warranty_years": 3, "serials": ["e5-1", "e5-2", "e5-3"]}},
+      {"sku": "F6", "qty": 50, "price": 0.99, "attrs": {"promo": true, "tags": ["clearance", "addon"]}},
+      {"sku": "G7", "qty": 7, "price": 74.25, "attrs": {"color": "green", "dimensions": {"h": 10, "w": 5, "d": 2}}}
+    ]
+  },
+  "metadata": {
+    "trace": "abc-123",
+    "ts": 1734067200,
+    "headers": {
+      "ua": "oha-bench",
+      "accept": ["application/json", "*/*"],
+      "cookies": [
+        "sid=s123",
+        "pref=dark",
+        "ab=variant1"
+      ]
+    },
+    "routing": {
+      "region": "us-east-1",
+      "colo": "iad50",
+      "edge_chain": ["edge-a", "edge-b", "edge-c"]
+    }
+  },
+  "nested_array": [
+    {
+      "level": 1,
+      "data": {
+        "foo": [1, 2, 3, 4, 5],
+        "bar": {"k1": "v1", "k2": "v2"},
+        "matrix": [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+      }
+    },
+    {
+      "level": 2,
+      "data": {
+        "numbers": [10, 20, 30, 40, 50, 60],
+        "obj": [{"x": 1}, {"x": 2}, {"x": 3}],
+        "deep": {
+          "a": {"b": {"c": {"d": "deep-value", "arr": [100, 200, 300, 400]}}},
+          "list": [
+            {"k": "v1", "n": [1, 2, 3]},
+            {"k": "v2", "n": [4, 5, 6]},
+            {"k": "v3", "n": [7, 8, 9]}
+          ]
+        }
+      }
+    },
+    {
+      "level": 3,
+      "data": {
+        "payloads": [
+          {"id": "p1", "metrics": {"lat": [1.1, 2.2, 3.3], "err": [0, 1, 0, 2]}},
+          {"id": "p2", "metrics": {"lat": [4.4, 5.5, 6.6], "err": [0, 0, 1, 0]}}
+        ],
+        "blobs": [
+          "ZmFrZS1iYXNlNjQtYmxvYjE=",
+          "ZmFrZS1iYXNlNjQtYmxvYjI=",
+          "ZmFrZS1iYXNlNjQtYmxvYjM="
+        ]
+      }
+    }
+  ],
+  "tags": [
+    "bench",
+    "heavy",
+    "json",
+    "parse",
+    "load",
+    "ramp",
+    "attrs",
+    "deep",
+    "wide"
+  ]
+}

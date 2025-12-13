@@ -1,0 +1,158 @@
+{
+  "payload": {
+    "user": {
+      "id": 999999,
+      "name": "max-stress",
+      "prefs": {
+        "lang": "en",
+        "tz": "UTC",
+        "flags": [true, false, true, true, false, true, false, true, false, true],
+        "features": {
+          "beta": ["f1", "f2", "f3", "f4", "f5", "f6", "f7", "f8", "f9", "f10"],
+          "limits": {
+            "req_per_min": 500000,
+            "burst": 100000,
+            "fanout": 1024
+          }
+        }
+      }
+    },
+    "items": [
+        {"sku": "I001", "qty": 10, "price": 9.99, "attrs": {"color": "red", "size": "M", "tags": ["t1", "t2", "t3"]}},
+        {"sku": "I002", "qty": 20, "price": 19.99, "attrs": {"color": "blue", "size": "L", "tags": ["t4", "t5", "t6"]}},
+        {"sku": "I003", "qty": 30, "price": 29.99, "attrs": {"color": "green", "size": "XL", "tags": ["t7", "t8", "t9"]}},
+        {"sku": "I004", "qty": 40, "price": 39.99, "attrs": {"bundle": true, "codes": ["c1", "c2", "c3", "c4", "c5"]}},
+        {"sku": "I005", "qty": 50, "price": 49.99, "attrs": {"warranty_years": 5, "serials": ["s1", "s2", "s3", "s4", "s5"]}},
+        {"sku": "I006", "qty": 60, "price": 59.99, "attrs": {"promo": true, "tags": ["clearance", "addon", "bulk"]}},
+        {"sku": "I007", "qty": 70, "price": 69.99, "attrs": {"color": "black", "dimensions": {"h": 10, "w": 5, "d": 2}}},
+        {"sku": "I008", "qty": 80, "price": 79.99, "attrs": {"color": "white", "dimensions": {"h": 11, "w": 6, "d": 3}}},
+        {"sku": "I009", "qty": 90, "price": 89.99, "attrs": {"color": "gray", "dimensions": {"h": 12, "w": 7, "d": 4}}},
+        {"sku": "I010", "qty": 100, "price": 99.99, "attrs": {"color": "yellow", "dimensions": {"h": 13, "w": 8, "d": 5}}},
+        {"sku": "I011", "qty": 110, "price": 109.99, "attrs": {"color": "purple", "dimensions": {"h": 14, "w": 9, "d": 6}}},
+        {"sku": "I012", "qty": 120, "price": 119.99, "attrs": {"color": "orange", "dimensions": {"h": 15, "w": 10, "d": 7}}},
+        {"sku": "I013", "qty": 130, "price": 129.99, "attrs": {"color": "pink", "dimensions": {"h": 16, "w": 11, "d": 8}}},
+        {"sku": "I014", "qty": 140, "price": 139.99, "attrs": {"color": "cyan", "dimensions": {"h": 17, "w": 12, "d": 9}}},
+        {"sku": "I015", "qty": 150, "price": 149.99, "attrs": {"color": "magenta", "dimensions": {"h": 18, "w": 13, "d": 10}}},
+        {"sku": "I016", "qty": 160, "price": 159.99, "attrs": {"color": "gold", "dimensions": {"h": 19, "w": 14, "d": 11}}},
+        {"sku": "I017", "qty": 170, "price": 169.99, "attrs": {"color": "silver", "dimensions": {"h": 20, "w": 15, "d": 12}}},
+        {"sku": "I018", "qty": 180, "price": 179.99, "attrs": {"color": "bronze", "dimensions": {"h": 21, "w": 16, "d": 13}}},
+        {"sku": "I019", "qty": 190, "price": 189.99, "attrs": {"color": "teal", "dimensions": {"h": 22, "w": 17, "d": 14}}},
+        {"sku": "I020", "qty": 200, "price": 199.99, "attrs": {"color": "navy", "dimensions": {"h": 23, "w": 18, "d": 15}}},
+        {"sku": "I021", "qty": 210, "price": 209.99, "attrs": {"color": "lime", "dimensions": {"h": 24, "w": 19, "d": 16}}},
+        {"sku": "I022", "qty": 220, "price": 219.99, "attrs": {"color": "maroon", "dimensions": {"h": 25, "w": 20, "d": 17}}},
+        {"sku": "I023", "qty": 230, "price": 229.99, "attrs": {"color": "olive", "dimensions": {"h": 26, "w": 21, "d": 18}}},
+        {"sku": "I024", "qty": 240, "price": 239.99, "attrs": {"color": "aqua", "dimensions": {"h": 27, "w": 22, "d": 19}}},
+        {"sku": "I025", "qty": 250, "price": 249.99, "attrs": {"color": "fuchsia", "dimensions": {"h": 28, "w": 23, "d": 20}}},
+        {"sku": "I026", "qty": 260, "price": 259.99, "attrs": {"color": "brown", "dimensions": {"h": 29, "w": 24, "d": 21}}},
+        {"sku": "I027", "qty": 270, "price": 269.99, "attrs": {"color": "coral", "dimensions": {"h": 30, "w": 25, "d": 22}}},
+        {"sku": "I028", "qty": 280, "price": 279.99, "attrs": {"color": "ivory", "dimensions": {"h": 31, "w": 26, "d": 23}}},
+        {"sku": "I029", "qty": 290, "price": 289.99, "attrs": {"color": "khaki", "dimensions": {"h": 32, "w": 27, "d": 24}}},
+        {"sku": "I030", "qty": 300, "price": 299.99, "attrs": {"color": "orchid", "dimensions": {"h": 33, "w": 28, "d": 25}}}
+      ]
+  },
+  "metadata": {
+    "trace": "huge-999",
+    "ts": 1734067200,
+    "headers": {
+      "ua": "oha-bench",
+      "accept": ["application/json", "*/*"],
+      "cookies": ["sid=s999", "pref=light", "ab=variantX", "exp=huge", "cohort=42"],
+      "forwarded": ["for=10.0.0.1", "for=10.0.0.2", "for=10.0.0.3"]
+    },
+    "routing": {
+      "region": "us-east-1",
+      "colo": "iad50",
+      "edge_chain": ["edge-a", "edge-b", "edge-c", "edge-d", "edge-e"],
+      "rules": [
+        {"id": "r1", "action": "allow", "weight": 0.5},
+        {"id": "r2", "action": "mirror", "weight": 0.3},
+        {"id": "r3", "action": "shadow", "weight": 0.2}
+      ]
+    }
+  },
+  "nested_array": [
+    {
+      "level": 1,
+      "data": {
+        "foo": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+        "bar": {"k1": "v1", "k2": "v2", "k3": "v3", "k4": "v4", "k5": "v5"},
+        "matrix": [[1,2,3],[4,5,6],[7,8,9],[10,11,12],[13,14,15],[16,17,18]]
+      }
+    },
+    {
+      "level": 2,
+      "data": {
+        "numbers": [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],
+        "obj": [{"x": 1}, {"x": 2}, {"x": 3}, {"x": 4}, {"x": 5}, {"x": 6}, {"x": 7}],
+        "deep": {
+          "a": {"b": {"c": {"d": "deep-value", "arr": [100, 200, 300, 400, 500, 600, 700, 800]}}},
+          "list": [
+            {"k": "v1", "n": [1, 2, 3, 4, 5, 6, 7]},
+            {"k": "v2", "n": [8, 9, 10, 11, 12, 13, 14]},
+            {"k": "v3", "n": [15, 16, 17, 18, 19, 20, 21]},
+            {"k": "v4", "n": [22, 23, 24, 25, 26, 27, 28]},
+            {"k": "v5", "n": [29, 30, 31, 32, 33, 34, 35]},
+            {"k": "v6", "n": [36, 37, 38, 39, 40, 41, 42]}
+          ]
+        }
+      }
+    },
+    {
+      "level": 3,
+      "data": {
+        "payloads": [
+          {"id": "p1", "metrics": {"lat": [1.1, 2.2, 3.3, 4.4, 5.5, 6.6, 7.7], "err": [0, 1, 0, 2, 0, 1, 2]}},
+          {"id": "p2", "metrics": {"lat": [8.8, 9.9, 10.1, 11.2, 12.3, 13.4, 14.5], "err": [0, 0, 1, 0, 1, 2, 1]}},
+          {"id": "p3", "metrics": {"lat": [15.5, 16.6, 17.7, 18.8, 19.9, 20.1, 21.2], "err": [1, 0, 0, 1, 0, 2, 0]}},
+          {"id": "p4", "metrics": {"lat": [22.2, 23.3, 24.4, 25.5, 26.6, 27.7, 28.8], "err": [2, 1, 0, 2, 1, 0, 1]}}
+        ],
+        "blobs": [
+          "ZmFrZS1iYXNlNjQtYmxvYjE=",
+          "ZmFrZS1iYXNlNjQtYmxvYjI=",
+          "ZmFrZS1iYXNlNjQtYmxvYjM=",
+          "ZmFrZS1iYXNlNjQtYmxvYjQ=",
+          "ZmFrZS1iYXNlNjQtYmxvYjU=",
+          "ZmFrZS1iYXNlNjQtYmxvYjY=",
+          "ZmFrZS1iYXNlNjQtYmxvYjc="
+        ]
+      }
+    },
+    {
+      "level": 4,
+      "data": {
+        "shards": [
+          {"shard": 1, "keys": ["k1", "k2", "k3", "k4", "k5", "k6", "k7"], "weights": [0.1, 0.1, 0.2, 0.25, 0.35, 0.05, 0.15]},
+          {"shard": 2, "keys": ["k8", "k9", "k10", "k11", "k12", "k13", "k14"], "weights": [0.05, 0.1, 0.15, 0.3, 0.4, 0.2, 0.2]},
+          {"shard": 3, "keys": ["k15", "k16", "k17", "k18", "k19", "k20", "k21"], "weights": [0.2, 0.2, 0.2, 0.2, 0.2, 0.1, 0.1]},
+          {"shard": 4, "keys": ["k22", "k23", "k24", "k25", "k26", "k27", "k28"], "weights": [0.15, 0.15, 0.15, 0.15, 0.15, 0.15, 0.1]}
+        ],
+        "experiments": [
+          {"exp": "exp1", "buckets": [{"id": "b1", "p": 0.5}, {"id": "b2", "p": 0.3}, {"id": "b3", "p": 0.2}, {"id": "b4", "p": 0.1}]},
+          {"exp": "exp2", "buckets": [{"id": "b1", "p": 0.6}, {"id": "b2", "p": 0.25}, {"id": "b3", "p": 0.15}, {"id": "b4", "p": 0.05}]},
+          {"exp": "exp3", "buckets": [{"id": "b1", "p": 0.7}, {"id": "b2", "p": 0.2}, {"id": "b3", "p": 0.1}, {"id": "b4", "p": 0.0}]}
+        ]
+      }
+    },
+    {
+      "level": 5,
+      "data": {
+        "extra": "This is an extra level to further increase the size.",
+        "array": [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20],
+        "obj": [{"a":1},{"b":2},{"c":3},{"d":4},{"e":5},{"f":6},{"g":7},{"h":8},{"i":9},{"j":10}]
+      }
+    }
+  ],
+  "tags": [
+    "bench",
+    "heavy",
+    "json",
+    "parse",
+    "load",
+    "huge",
+    "wide",
+    "deep",
+    "attrs",
+    "fanout",
+    "stress"
+  ]
+}
