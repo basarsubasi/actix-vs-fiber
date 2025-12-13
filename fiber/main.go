@@ -5,10 +5,14 @@ import (
 	"os"
 
 	"github.com/gofiber/fiber/v2"
+	"github.com/joho/godotenv"
 	_ "github.com/lib/pq"
 )
 
 func main() {
+	// Load .env file if present
+	godotenv.Load()
+
 	connStr := os.Getenv("DATABASE_URL")
 	if connStr == "" {
 		connStr = "postgresql://postgres:postgres@localhost:5432/benchmark_database?sslmode=disable"
