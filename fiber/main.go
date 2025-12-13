@@ -1,8 +1,9 @@
 package main
 
 import (
-	"log"
+	"fmt"
 	"os"
+	"log"
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/joho/godotenv"
@@ -19,7 +20,7 @@ func main() {
 	}
 
 	if _, err := initDB(connStr); err != nil {
-		log.Fatalf("failed to initialize database: %v", err)
+		fmt.Printf("failed to initialize database: %v", err)
 	}
 
 	app := fiber.New()
@@ -37,5 +38,5 @@ func main() {
 	// Heavy table operations
 	app.Get("/read_heavy_db", handleReadHeavyFromDB)
 	app.Post("/write_heavy_db", handleWriteHeavyToDB)
-	log.Fatal(app.Listen(":3000"))
+	log.Fatal(app.Listen(":3001"))
 }

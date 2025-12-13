@@ -5,9 +5,10 @@ import (
 	"database/sql"
 	"encoding/json"
 	"time"
-	"github.com/lib/pq"
 
+	"github.com/bytedance/sonic"
 	"github.com/gofiber/fiber/v2"
+	"github.com/lib/pq"
 )
 
 func ctxWithTimeout() (context.Context, context.CancelFunc) {
@@ -28,7 +29,7 @@ func handleParseLightJson(c *fiber.Ctx) error {
 
 func handleParseHeavyJson(c *fiber.Ctx) error {
 	var payload heavyPayload
-	if err := json.Unmarshal(c.Body(), &payload); err != nil {
+	if err := sonic.Unmarshal(c.Body(), &payload); err != nil {
 		return fiber.NewError(fiber.StatusBadRequest, "invalid heavy json")
 	}
 	return c.JSON(fiber.Map{"parsed": true})
