@@ -38,5 +38,5 @@ func main() {
 	// Heavy table operations
 	app.Get("/read_heavy_db", handleReadHeavyFromDB)
 	app.Post("/write_heavy_db", handleWriteHeavyToDB)
-	log.Fatal(app.Listen(":3001"))
+	log.Fatal(app.Listen(":3010"))
 }
